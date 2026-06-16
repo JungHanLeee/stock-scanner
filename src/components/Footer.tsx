@@ -12,6 +12,7 @@ export function Footer() {
           </div>
           <nav className="flex items-center gap-6 text-sm text-gray-400">
             <Link to="/guide" className="hover:text-white transition-colors">투자 지표 가이드</Link>
+            <Link to="/blog" className="hover:text-white transition-colors">투자 칼럼</Link>
             <Link to="/about" className="hover:text-white transition-colors">소개</Link>
             <Link to="/privacy" className="hover:text-white transition-colors">개인정보처리방침</Link>
           </nav>

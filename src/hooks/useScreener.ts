@@ -48,6 +48,7 @@ function generateLabel(f: FilterState): string {
 
 // ── 로컬스토리지 헬퍼 ────────────────────────────────────────────
 function loadHistory(): FilterHistoryEntry[] {
+  if (typeof window === 'undefined') return [] // SSR/prerender 가드
   try {
     const raw = localStorage.getItem(LS_KEY)
     return raw ? (JSON.parse(raw) as FilterHistoryEntry[]) : []
@@ -55,6 +56,7 @@ function loadHistory(): FilterHistoryEntry[] {
 }
 
 function saveHistory(entries: FilterHistoryEntry[]): void {
+  if (typeof window === 'undefined') return // SSR/prerender 가드
   try { localStorage.setItem(LS_KEY, JSON.stringify(entries)) } catch { /* 무시 */ }
 }
 

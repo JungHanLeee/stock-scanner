@@ -1,8 +1,15 @@
+import { Seo } from '../components/Seo'
+
 export default function PrivacyPage() {
   return (
     <article className="prose prose-invert max-w-none">
+      <Seo
+        title="개인정보처리방침"
+        description="주식 스크리너의 개인정보 수집·이용, 쿠키 및 Google AdSense 광고, 정보 보유·파기에 관한 처리방침입니다."
+        path="/privacy"
+      />
       <h1 className="text-2xl font-bold text-white mb-2">개인정보처리방침</h1>
-      <p className="text-gray-400 text-sm mb-8">최종 업데이트: 2024년 7월</p>
+      <p className="text-gray-400 text-sm mb-8">최종 업데이트: 2026년 6월</p>
 
       <section className="mb-8">
         <h2 className="text-lg font-semibold text-white mb-3">1. 개요</h2>
@@ -68,7 +75,11 @@ export default function PrivacyPage() {
       <section>
         <h2 className="text-lg font-semibold text-white mb-3">7. 문의</h2>
         <p className="text-gray-300">
-          개인정보 관련 문의사항이 있으시면 서비스 운영자에게 이메일로 연락해 주세요.
+          개인정보 관련 문의사항이 있으시면{' '}
+          <a href="mailto:dlwjdgks126@gmail.com" className="text-blue-400 hover:text-blue-300">
+            dlwjdgks126@gmail.com
+          </a>
+          으로 연락해 주세요.
           본 방침은 관련 법령 변경 또는 서비스 변경에 따라 사전 고지 없이 수정될 수 있습니다.
         </p>
       </section>

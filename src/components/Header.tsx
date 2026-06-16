@@ -25,6 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ market, onMarketChange, total, l
           </Link>
           <nav className="hidden md:flex items-center gap-3 text-sm">
             <Link to="/guide" className="text-gray-400 hover:text-white transition-colors">투자 지표 가이드</Link>
+            <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">투자 칼럼</Link>
             <Link to="/about" className="text-gray-400 hover:text-white transition-colors">소개</Link>
           </nav>
         </div>

@@ -1,3 +1,5 @@
+import { Seo } from '../components/Seo'
+
 interface MetricCardProps {
   name: string
   formula?: string
@@ -29,6 +31,11 @@ function MetricCard({ name, formula, good, caution, description }: MetricCardPro
 export default function GuidePage() {
   return (
     <article>
+      <Seo
+        title="투자 지표 완전 가이드"
+        description="PER, PBR, ROE, PEG, EV/EBITDA, 배당수익률 등 주식 스크리너의 핵심 재무 지표 17가지를 공식·해석·주의점과 함께 쉽게 설명합니다."
+        path="/guide"
+      />
       <h1 className="text-2xl font-bold text-white mb-2">주식 투자 지표 완전 가이드</h1>
       <p className="text-gray-400 text-sm mb-10">
         주식 스크리너에서 사용하는 핵심 재무 지표들을 쉽게 설명합니다.

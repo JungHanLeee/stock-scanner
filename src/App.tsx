@@ -5,10 +5,13 @@ import { FilterPanel } from './components/FilterPanel'
 import { StockTable } from './components/StockTable'
 import { StockModal } from './components/StockModal'
 import { Footer } from './components/Footer'
+import { Seo, SITE_URL } from './components/Seo'
 import { useScreener } from './hooks/useScreener'
 import AboutPage from './pages/About'
 import PrivacyPage from './pages/Privacy'
 import GuidePage from './pages/Guide'
+import BlogPage from './pages/Blog'
+import BlogPostPage from './pages/BlogPost'
 
 function ScreenerPage() {
   const {
@@ -30,8 +33,21 @@ function ScreenerPage() {
     setSelectedStock({ ticker, market })
   }, [])
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: '주식 스크리너 | Stock Screener KR',
+    url: SITE_URL,
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'KRW' },
+    description:
+      '미국·한국 주식을 PER, PBR, ROE, 배당수익률 등 30여 가지 재무 지표로 무료 필터링하는 주식 스크리너.',
+  }
+
   return (
     <div className="h-screen flex flex-col bg-gray-950 text-white overflow-hidden">
+      <Seo path="/" jsonLd={jsonLd} />
       <Header market={filters.market} onMarketChange={handleMarketChange} total={total} loading={loading} />
       <FilterPanel
         filters={filters}
@@ -70,6 +86,8 @@ function App() {
       <Route path="/about" element={<PageLayout><AboutPage /></PageLayout>} />
       <Route path="/privacy" element={<PageLayout><PrivacyPage /></PageLayout>} />
       <Route path="/guide" element={<PageLayout><GuidePage /></PageLayout>} />
+      <Route path="/blog" element={<PageLayout><BlogPage /></PageLayout>} />
+      <Route path="/blog/:slug" element={<PageLayout><BlogPostPage /></PageLayout>} />
     </Routes>
   )
 }

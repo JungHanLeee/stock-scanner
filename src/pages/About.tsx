@@ -1,6 +1,13 @@
+import { Seo } from '../components/Seo'
+
 export default function AboutPage() {
   return (
     <article className="prose prose-invert max-w-none">
+      <Seo
+        title="서비스 소개"
+        description="미국·한국 주식을 30여 가지 재무 지표로 필터링하는 무료 주식 스크리너 소개. 제공 기능, 데이터 출처, 면책조항을 안내합니다."
+        path="/about"
+      />
       <h1 className="text-2xl font-bold text-white mb-2">주식 스크리너 소개</h1>
       <p className="text-gray-400 text-sm mb-8">Stock Screener KR — 미국·한국 주식 무료 스크리닝 서비스</p>
 
@@ -49,7 +56,10 @@ export default function AboutPage() {
       <section>
         <h2 className="text-lg font-semibold text-white mb-3">문의</h2>
         <p className="text-gray-300">
-          서비스 관련 문의는 이메일로 연락해 주세요.
+          서비스 관련 문의나 제휴 제안은 아래 이메일로 연락해 주세요.<br />
+          <a href="mailto:dlwjdgks126@gmail.com" className="text-blue-400 hover:text-blue-300">
+            dlwjdgks126@gmail.com
+          </a>
         </p>
       </section>
     </article>
